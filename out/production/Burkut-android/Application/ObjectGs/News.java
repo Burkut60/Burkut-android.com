@@ -1,4 +1,4 @@
-package Application.ObjectGson;
+package Application.ObjectGs;
 
 import java.util.List;
 
@@ -59,4 +59,6 @@ public class News {
     public void setKeywords(List<String> keywords) {
         this.keywords = keywords;
     }
+
 }
+

@@ -1,14 +1,15 @@
 package Application.Entity;
 
+import Application.Interface.InSave;
 import java.io.BufferedInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
-public class InPutSave {
+public class InPutSave implements InSave {
 
-    public static void getPut(URL myUrl) throws IOException {
+    public static String getPut(URL myUrl) throws IOException {
 
         String newFile = "newFile.json";
 
@@ -24,6 +25,7 @@ public class InPutSave {
         System.out.print(" Download finish! ");
         input.close();
         outPut.close();
+        return newFile;
     }
 }
 

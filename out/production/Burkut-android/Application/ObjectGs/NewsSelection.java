@@ -1,18 +1,22 @@
-package Application.ObjectGson;
+package Application.ObjectGs;
 
 import java.util.List;
 
 public class NewsSelection {
-    private String name;
+    private String name1;
     private String location;
     private List<News> allNews;
 
+    public  NewsSelection(List<News> allNews) {
+        this.allNews = allNews;
+    }
+
     public String getName() {
-        return name;
+        return name1;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name1 = name;
     }
 
     public String getLocation() {
