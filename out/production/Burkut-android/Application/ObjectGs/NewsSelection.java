@@ -7,7 +7,7 @@ public class NewsSelection {
     private String location;
     private List<News> allNews;
 
-    public  NewsSelection(List<News> allNews) {
+   private NewsSelection(List<News> allNews) {
         this.allNews = allNews;
     }
 

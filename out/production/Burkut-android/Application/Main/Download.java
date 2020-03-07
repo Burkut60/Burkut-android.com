@@ -14,8 +14,5 @@ public class Download {
         Gson gson = new Gson();
         NewsSelection newsSelection = gson.fromJson(ReadFileUrl.getUrl(newUrl), NewsSelection.class);
 
-     //   for (NewsSelection news : newsSelection.getName()) {
-       //     System.out.println(news.getName());
-       // }
     }
 }
