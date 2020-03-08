@@ -1,11 +1,10 @@
 package Application.Entity;
 
 import Application.Interface.InSave;
-import java.io.BufferedInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+
+import java.io.*;
 import java.net.URL;
+import java.util.Arrays;
 
 public class InPutSave implements InSave {
 
@@ -21,10 +20,25 @@ public class InPutSave implements InSave {
         byte buffer[] = new byte[1024];
         while (input.read(buffer) != -1) {
             outPut.write(buffer);
+
+            System.out.println(newFile);
         }
-        System.out.print(" Download finish! ");
-        input.close();
-        outPut.close();
+//               НЕ РАБОТАЕТ!!!!!!
+//        System.out.println(Arrays.toString(newFile));
+//        String str = new String(newFile);
+//
+//        System.out.print(" Download finish! ");
+//
+//        FileWriter fileWriter = new FileWriter(str);
+//        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+//
+//        for (String s : str){
+//            bufferedWriter.write(s);
+//
+//            input.close();
+//            outPut.close();
+//            bufferedWriter.close();
+//        }
         return newFile;
     }
 }

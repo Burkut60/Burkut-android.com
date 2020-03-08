@@ -51,7 +51,6 @@ public class News {
         this.date = date;
     }
 
-
     public List<String> getKeywords() {
         return keywords;
     }

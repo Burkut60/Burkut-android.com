@@ -1,7 +1,7 @@
 package Application.Interface;
 
 public interface ReadUrl {
-     static String getUrl() {
+    static String getUrl() {
         return null;
     }
 }
