@@ -11,6 +11,15 @@ public class News {
     private boolean visible;
     private List<String> keywords;
 
+//public News(int id, String title, String description, String date, boolean visible){
+//    this.id = id;
+//    this.title = title;
+//    this.description = description;
+//    this.date = date;
+//    this.visible = visible;
+
+// }
+
     public boolean isVisible() {
         return visible;
     }

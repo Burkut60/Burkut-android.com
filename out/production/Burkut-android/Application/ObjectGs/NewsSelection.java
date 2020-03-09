@@ -3,20 +3,19 @@ package Application.ObjectGs;
 import java.util.List;
 
 public class NewsSelection {
-    private String name1;
+    private String name;
     private String location;
-    private List<News> allNews;
+ public List<NewsSelection> allNews;
 
-   private NewsSelection(List<News> allNews) {
-        this.allNews = allNews;
-    }
+
+
 
     public String getName() {
-        return name1;
+        return name;
     }
 
     public void setName(String name) {
-        this.name1 = name;
+        this.name = name;
     }
 
     public String getLocation() {
@@ -27,11 +26,4 @@ public class NewsSelection {
         this.location = location;
     }
 
-    public List<News> getAllNews() {
-        return allNews;
-    }
-
-    public void setAllNews(List<News> allNews) {
-        allNews = allNews;
-    }
 }
