@@ -12,12 +12,10 @@ public class ReadFileUrl implements ReadUrl {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(newUrl.openStream()));
         StringBuilder stringBuilder = new StringBuilder();
 
-
         String inPutLine;
         while ((inPutLine = bufferedReader.readLine()) != null) {
             stringBuilder.append(inPutLine).append("\n");
         }
-
         bufferedReader.close();
 
         return stringBuilder.toString();

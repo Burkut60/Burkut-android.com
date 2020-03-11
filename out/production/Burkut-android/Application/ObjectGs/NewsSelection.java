@@ -3,11 +3,10 @@ package Application.ObjectGs;
 import java.util.List;
 
 public class NewsSelection {
+
     private String name;
     private String location;
- public List<NewsSelection> allNews;
-
-
+    public List<News> news;
 
 
     public String getName() {
@@ -25,5 +24,4 @@ public class NewsSelection {
     public void setLocation(String location) {
         this.location = location;
     }
-
 }

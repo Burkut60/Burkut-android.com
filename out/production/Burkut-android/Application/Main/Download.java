@@ -4,46 +4,41 @@ import Application.Entity.ReadFileUrl;
 import Application.ObjectGs.News;
 import Application.ObjectGs.NewsSelection;
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import java.io.FileReader;
+import com.google.gson.GsonBuilder;
+import com.google.gson.TypeAdapterFactory;
+
 import java.io.IOException;
 import java.net.URL;
-import java.util.Iterator;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Download {
 
     public static void main(String[] args) throws IOException {
         URL newUrlL = new URL("https://fake-api.kiparo.by/json/it_news.json");
-        Object obj = new JsonParser().parse(ReadFileUrl.getUrl(newUrlL));
-        JsonObject jsonObject = (JsonObject) obj;
 
-        JsonArray jsonArray = (JsonArray) jsonObject.get("news");
-        Iterator newsIterator = jsonArray.iterator();
+        Gson gson = new Gson();
+        NewsSelection newsSelection = gson.fromJson(ReadFileUrl.getUrl(newUrlL), NewsSelection.class);
 
-        System.out.println("news : ");
+       GsonBuilder gsonBuilder = new GsonBuilder();
+               //.setDateFormat("yyy-MM-dd HH:mm:ss").create();
 
-        while (newsIterator.hasNext()) {
-            JsonObject jsonObject1 = (JsonObject) newsIterator.next();
-            System.out.println(jsonObject1.get("id"));
-            System.out.println(jsonObject1.get("title"));
-            System.out.println(jsonObject1.get("description"));
-            System.out.println(jsonObject1.get("date"));
-            System.out.println(jsonObject1.get("visible"));
-            System.out.println("__________________________________");
+
+
+
+        System.out.println(newsSelection.getLocation());
+        System.out.println(newsSelection.getName());
+
+        for (News newS : newsSelection.news) {
+            System.out.println(newS.getId());
+            System.out.println(newS.getTitle());
+            System.out.println(newS.isVisible());
+            System.out.println(newS.date);
+            System.out.println(newS.getDescription());
+            System.out.println("____________________________");
         }
     }
-    // Вопрос ! Почему не получилось реализовать??
-    //Gson gson = new Gson();
-//        NewsSelection newsSelection = gson.fromJson(ReadFileUrl.getUrl(newUrlL), NewsSelection.class);
-//     System.out.println(newsSelection.getLocation());
-//        System.out.println(newsSelection.getName());
-//
-//        for ( NewsSelection newS : newsSelection.allNews){
-//            System.out.println(newS.);
-//        }
 
- }
 
+}
 
