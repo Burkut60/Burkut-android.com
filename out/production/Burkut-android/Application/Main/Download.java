@@ -5,12 +5,9 @@ import Application.ObjectGs.News;
 import Application.ObjectGs.NewsSelection;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.TypeAdapterFactory;
-
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 
 public class Download {
 
@@ -20,11 +17,7 @@ public class Download {
         Gson gson = new Gson();
         NewsSelection newsSelection = gson.fromJson(ReadFileUrl.getUrl(newUrlL), NewsSelection.class);
 
-       GsonBuilder gsonBuilder = new GsonBuilder();
-               //.setDateFormat("yyy-MM-dd HH:mm:ss").create();
-
-
-
+      Gson gsonBuilder = new GsonBuilder().setDateFormat("yyy-MM-dd HH:mm:ss").create();
 
         System.out.println(newsSelection.getLocation());
         System.out.println(newsSelection.getName());
@@ -38,7 +31,5 @@ public class Download {
             System.out.println("____________________________");
         }
     }
-
-
 }
 

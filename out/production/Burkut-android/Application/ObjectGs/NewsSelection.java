@@ -8,7 +8,6 @@ public class NewsSelection {
     private String location;
     public List<News> news;
 
-
     public String getName() {
         return name;
     }

@@ -48,14 +48,6 @@ public class News {
         this.description = description;
     }
 
-   // public void setDate(String date) {
-  //      this.date = date;
-  //  }
-
-  //  public String getDate() {
-   //     return date;
-  //  }
-
     public List<String> getKeywords() {
         return keywords;
     }
