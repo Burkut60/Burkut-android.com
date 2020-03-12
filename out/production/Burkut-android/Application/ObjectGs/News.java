@@ -8,13 +8,13 @@ public class News {
     private int id;
     private String title;
     private String description;
-   public Date date;
+    public String date;
     private boolean visible;
     private List<String> keywords;
 
-    public News(Date date) {
-       this.date = date;
-    }
+//    public News(Date date) {
+//       this.date = date;
+//    }
 
     public boolean isVisible() {
         return visible;
@@ -55,6 +55,8 @@ public class News {
     public void setKeywords(List<String> keywords) {
         this.keywords = keywords;
     }
+
+
 
 }
 
